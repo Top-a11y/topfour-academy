@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Top Four Academy | First Class Study Success System</title>
+  <style>
+    :root {
+      --premium-blue: #0A2463;
+      --gold-accent: #FFD700;
+      --urgency-red: #D62839;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #F8F9FA 0%, #E9ECEF 100%);
+      color: var(--premium-blue);
+    }
+
+    .premium-header {
+      background: linear-gradient(135deg, var(--premium-blue) 0%, #1E3B70 100%);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(10,36,99,0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .premium-header::after {
+      content: "🏆 98% SUCCESS RATE | TRUSTED BY 100+ STUDENTS 🏆";
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold-accent);
+      color: var(--premium-blue);
+      padding: 12px 40px;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 0.9em;
+      white-space: nowrap;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+      border: 3px solid var(--gold-accent);
+    }
+
+    .urgency-section {
+      background: linear-gradient(45deg, var(--urgency-red) 0%, #FF4D4D 100%);
+      color: white;
+      padding: 1.5rem;
+      border-radius: 15px;
+      margin: 2rem 0;
+      text-align: center;
+      animation: pulse 2s infinite;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .payment-card {
+      background: #FFFFFF;
+      padding: 2rem;
+      border-radius: 15px;
+      margin: 2rem 0;
+      border: 2px dashed var(--premium-blue);
+      position: relative;
+    }
+
+    .payment-card::before {
+      content: "⚡ INSTANT ACCESS UPON PAYMENT";
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold-accent);
+      color: var(--premium-blue);
+      padding: 8px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+    }
+
+    .form-group {
+      margin-bottom: 2rem;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 15px;
+      border: 2px solid var(--premium-blue);
+      border-radius: 10px;
+      font-size: 16px;
+      transition: all 0.3s;
+    }
+
+    input:focus, select:focus {
+      border-color: var(--gold-accent);
+      box-shadow: 0 0 15px rgba(255,215,0,0.3);
+    }
+
+    .premium-button {
+      background: linear-gradient(45deg, var(--premium-blue) 0%, #1E3B70 100%);
+      color: white;
+      padding: 20px 40px;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: all 0.3s;
+      width: 100%;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .premium-button::after {
+      content: "➤";
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.5em;
+      transition: all 0.3s;
+    }
+
+    .premium-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(10,36,99,0.4);
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="premium-header">
+    <h1>📚 TOP FOUR ACADEMY</h1>
+    <p>Your Secret Weapon for First Class Results</p>
+  </div>
+
+  <div class="container">
+    <div class="urgency-section">
+      Get first year study package for any program studied at NUL for just M49.99!<br>
+      <span id="countdown" style="font-weight: bold;">Next price increase in: 51:02:59:47</span>
+    </div>
+
+    <div class="payment-card">
+      <h3>💰 PAYMENT DETAILS</h3>
+      <div style="margin: 1.5rem 0;">
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+          <div>
+            <h4>M-Pesa</h4>
+            <p style="font-weight: bold; font-size: 1.2em;">124563</p>
+          </div>
+          <div>
+            <h4>EcoCash</h4>
+            <p style="font-weight: bold; font-size: 1.2em;">7152445</p>
+          </div>
+          <div>
+            <h4>Bank</h4>
+            <p style="font-weight: bold; font-size: 1.2em;">58827</p>
+          </div>
+        </div>
+        <p style="color: var(--urgency-red); margin-top: 1rem; font-weight: bold;">
+          ⏳ fill in the following details after paying!
+        </p>
+      </div>
+    </div>
+
+    <form action="https://formsubmit.co/topfouracademy@gmail.com" method="POST">
+      <input type="text" name="_honey" style="display:none">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://topfouracademy.com/thankyou.html">
+
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" name="name" required placeholder="Your to be degreefied name">
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" name="email" required placeholder="Where should we send your success package?">
+      </div>
+
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" name="phone" required placeholder="We'll add you to our free extra classes group">
+      </div>
+
+      <div class="form-group">
+        <label>Transaction ID</label>
+        <input type="text" name="transaction" required placeholder="Payment confirmation number">
+      </div>
+
+      <div class="form-group">
+        <label>Program of Study</label>
+        <select name="faculty" required>
+          <option value="">Select Your Path to Success</option>
+          <option>BSc Nursing</option>
+          <option>BSc Computer Science</option>
+          <option>BSc General</option>
+          <option>BSc Environmental Health</option>
+          <option>BSc Agriculture</option>
+          <option>BSc Nutrition</option>
+          <option>BSc Pharmacy</option>
+          <option>BSc Education</option>
+          <option>Faculty of Law</option>
+          <option>Faculty of Social Sciences</option>
+          <option>Faculty of Humanities</option>
+          <option>Faculty of Education</option>
+        </select>
+      </div>
+
+      <button type="submit" class="premium-button">
+        🔒 SECURE MY ACADEMIC SUCCESS NOW
+      </button>
+    </form>
+  </div>
+
+  <script>
+    let seconds = 4406400;
+    const timer = setInterval(() => {
+      seconds--;
+      const days = String(Math.floor(seconds / (3600 * 24))).padStart(2, '0');
+      const hours = String(Math.floor((seconds % (3600 * 24)) / 3600)).padStart(2, '0');
+      const minutes = String(Math.floor((seconds % 3600) / 60)).padStart(2, '0');
+      const secs = String(seconds % 60).padStart(2, '0');
+      const countdown = document.getElementById('countdown');
+      if (countdown) countdown.textContent = `${days}:${hours}:${minutes}:${secs}`;
+      if (seconds <= 0) clearInterval(timer);
+    }, 1000);
+  </script>
+</body>
+</html>
