@@ -230,31 +230,38 @@
     </form>
   </div>
 
-  <script>
-    let seconds = 4406400;
-    const timer = setInterval(() => {
-      seconds--;
-      const days = String(Math.floor(seconds / (3600 * 24))).padStart(2, '0');
-      const hours = String(Math.floor((seconds % (3600 * 24)) / 3600)).padStart(2, '0');
-      const minutes = String(Math.floor((seconds % 3600) / 60)).padStart(2, '0');
-      const secs = String(seconds % 60).padStart(2, '0');
-      const countdown = document.getElementById('countdown');
-      if (countdown) countdown.textContent = `${days}:${hours}:${minutes}:${secs}`;
-      if (seconds <= 0) clearInterval(timer);
-    }, 1000);
+ <script>
+  // Countdown timer
+  let seconds = 4406400;
+  const timer = setInterval(() => {
+    seconds--;
+    const days = String(Math.floor(seconds / (3600 * 24))).padStart(2, '0');
+    const hours = String(Math.floor((seconds % (3600 * 24)) / 3600)).padStart(2, '0');
+    const minutes = String(Math.floor((seconds % 3600) / 60)).padStart(2, '0');
+    const secs = String(seconds % 60).padStart(2, '0');
+    const countdown = document.getElementById('countdown');
+    if (countdown) countdown.textContent = `${days}:${hours}:${minutes}:${secs}`;
+    if (seconds <= 0) clearInterval(timer);
+  }, 1000);
 
-    // Validation: exactly 12 alphanumeric OR exactly 18 with dots at positions 9 and 14
-        const valid12 = /^[A-Za-z0-9]{12}$/.test(transaction);
-        const valid18 = /^[A-Za-z0-9]{8}\.[A-Za-z0-9]{4}\.[A-Za-z0-9]{5}$/.test(
-          transaction
-        );
+  // Transaction validation on submit
+  document.querySelector("form").addEventListener("submit", function (e) {
+    const transactionInput = document.querySelector("input[name='transaction']");
+    const transaction = transactionInput.value.trim();
 
-        if (!(valid12 || valid18)) {
-          alert(
-            "❌ Invalid transaction ID. "
-          );
-          return;
-        }
-  </script>
+    // Allow: 
+    // - 12 alphanumeric characters (e.g. "ABC123DEF456")
+    // - OR 18 characters with dots at positions 9 and 14 (e.g. "ABC12345A.1B2C.3D4E")
+    const valid12 = /^[A-Za-z0-9]{12}$/.test(transaction);
+    const valid18 = /^[A-Za-z0-9]{8}\.[A-Za-z0-9]{4}\.[A-Za-z0-9]{5}$/.test(transaction);
+
+    if (!valid12 && !valid18) {
+      alert("❌ Invalid transaction ID. Must be either 12 characters long or 18 characters in this format: XXXXXXXX.XXXX.XXXXX");
+      transactionInput.focus();
+      e.preventDefault();
+    }
+  });
+</script>
+
 </body>
 </html>
