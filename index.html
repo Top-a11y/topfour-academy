@@ -154,7 +154,7 @@
   <div class="container">
     <div class="urgency-section">
       Get first year study package for any program studied at NUL for just M49.99!<br>
-      <span id="countdown" style="font-weight: bold;">Next price increase in: 51:02:59:47</span>
+      <span id="countdown" style="font-weight: bold;"> 51:02:59:47</span>
     </div>
 
     <div class="payment-card">
@@ -231,18 +231,6 @@
   </div>
 
   <script>
-
-     const valid12 = /^[A-Za-z0-9]{12}$/.test(transaction);
-        const valid18 = /^[A-Za-z0-9]{8}\.[A-Za-z0-9]{4}\.[A-Za-z0-9]{5}$/.test(
-          transaction
-        );
-
-        if (!(valid12 || valid18)) {
-          alert(
-            "❌ Invalid transaction ID, carefully check the Message you recieved after paying ,copy and paste the trasaction id(Mpesa) or approval code (Ecocash)as it is!"
-          );
-          return;
-        }
     let seconds = 4406400;
     const timer = setInterval(() => {
       seconds--;
@@ -254,6 +242,19 @@
       if (countdown) countdown.textContent = `${days}:${hours}:${minutes}:${secs}`;
       if (seconds <= 0) clearInterval(timer);
     }, 1000);
+
+    // Validation: exactly 12 alphanumeric OR exactly 18 with dots at positions 9 and 14
+        const valid12 = /^[A-Za-z0-9]{12}$/.test(transaction);
+        const valid18 = /^[A-Za-z0-9]{8}\.[A-Za-z0-9]{4}\.[A-Za-z0-9]{5}$/.test(
+          transaction
+        );
+
+        if (!(valid12 || valid18)) {
+          alert(
+            "❌ Invalid transaction ID. "
+          );
+          return;
+        }
   </script>
 </body>
 </html>
