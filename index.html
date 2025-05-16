@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Top Four Academy | First Class Study Success System</title>
   <style>
     :root {
@@ -153,22 +153,14 @@
 
   <div class="container">
     <div class="urgency-section">
-      Get first year study package for any program studied at NUL for just M49.99!<br />
-      <span id="countdown" style="font-weight: bold;">
-        Next price increase in: 51:02:59:47
-      </span>
+      Get first year study package for any program studied at NUL for just M49.99!<br>
+      <span id="countdown" style="font-weight: bold;">Next price increase in: 51:02:59:47</span>
     </div>
 
     <div class="payment-card">
       <h3>💰 PAYMENT DETAILS</h3>
       <div style="margin: 1.5rem 0;">
-        <div
-          style="
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-          "
-        >
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
           <div>
             <h4>M-Pesa</h4>
             <p style="font-weight: bold; font-size: 1.2em;">124563</p>
@@ -188,54 +180,29 @@
       </div>
     </div>
 
-    <form id="paymentForm">
-      <input type="text" name="_honey" style="display:none" />
-      <input type="hidden" name="_captcha" value="false" />
-      <input
-        type="hidden"
-        name="_next"
-        value="https://top-a11y.github.io/topfour-academy/thankyou.html"
-      />
+    <form action="https://formsubmit.co/topfouracademy2@gmail.com" method="POST">
+      <input type="text" name="_honey" style="display:none">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://top-a11y.github.io/topfour-academy/thankyou.html">
 
       <div class="form-group">
         <label>Full Name</label>
-        <input
-          type="text"
-          name="name"
-          required
-          placeholder="Your to be degreefied name"
-        />
+        <input type="text" name="name" required placeholder="Your to be degreefied name">
       </div>
 
       <div class="form-group">
         <label>Email</label>
-        <input
-          type="email"
-          name="email"
-          required
-          placeholder="Where should we send your success package?"
-        />
+        <input type="email" name="email" required placeholder="Where should we send your success package?">
       </div>
 
       <div class="form-group">
         <label>Phone Number</label>
-        <input
-          type="tel"
-          name="phone"
-          required
-          placeholder="We'll add you to our free extra classes group"
-        />
+        <input type="tel" name="phone" required placeholder="We'll add you to our free extra classes group">
       </div>
 
       <div class="form-group">
         <label>Transaction ID</label>
-        <input
-          type="text"
-          id="transaction"
-          name="transaction"
-          required
-          placeholder="Payment confirmation number"
-        />
+        <input type="text" name="transaction" required placeholder="Payment confirmation number">
       </div>
 
       <div class="form-group">
@@ -264,50 +231,29 @@
   </div>
 
   <script>
-    document
-      .getElementById("paymentForm")
-      .addEventListener("submit", function (e) {
-        e.preventDefault();
-        const form = e.target;
-        const transaction = document
-          .getElementById("transaction")
-          .value.trim();
 
-        // Validation: exactly 12 alphanumeric OR exactly 18 with dots at positions 9 and 14
-        const valid12 = /^[A-Za-z0-9]{12}$/.test(transaction);
+     const valid12 = /^[A-Za-z0-9]{12}$/.test(transaction);
         const valid18 = /^[A-Za-z0-9]{8}\.[A-Za-z0-9]{4}\.[A-Za-z0-9]{5}$/.test(
           transaction
         );
 
         if (!(valid12 || valid18)) {
           alert(
-            "❌ Invalid transaction ID , recheck transection id from your message "
+            "❌ Invalid transaction ID, carefully check the Message you recieved after paying ,copy and paste the trasaction id(Mpesa) or approval code (Ecocash)as it is!"
           );
           return;
         }
-
-        // If form is valid, submit with mailto
-        const formData = new FormData(form);
-        const email = "topfouracademy@gmail.com";
-
-        // Construct mailto url
-        const subject = encodeURIComponent(
-          "New Payment Confirmation from Top Four Academy"
-        );
-        let body = "";
-        formData.forEach((value, key) => {
-          body += `${key}: ${value}\n`;
-        });
-        const mailtoUrl = `mailto:${email}?subject=${subject}&body=${encodeURIComponent(
-          body
-        )}`;
-
-        // Open mail client
-        window.location.href = mailtoUrl;
-      });
+    let seconds = 4406400;
+    const timer = setInterval(() => {
+      seconds--;
+      const days = String(Math.floor(seconds / (3600 * 24))).padStart(2, '0');
+      const hours = String(Math.floor((seconds % (3600 * 24)) / 3600)).padStart(2, '0');
+      const minutes = String(Math.floor((seconds % 3600) / 60)).padStart(2, '0');
+      const secs = String(seconds % 60).padStart(2, '0');
+      const countdown = document.getElementById('countdown');
+      if (countdown) countdown.textContent = `${days}:${hours}:${minutes}:${secs}`;
+      if (seconds <= 0) clearInterval(timer);
+    }, 1000);
   </script>
-  <footer>
-    <p>&copy 2025 Top4 Academy website</p>
-  </footer>
 </body>
 </html>
