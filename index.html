@@ -153,7 +153,7 @@
 
   <div class="container">
     <div class="urgency-section">
-      Get first year study package for any program studied at NUL for just M49.99!<br>
+      Get first year study package for programs studied at NUL for just M49.99!<br>
       <span id="countdown"> 51:02:59:47</span>
     </div>
 
@@ -163,15 +163,15 @@
         <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
           <div>
             <h4>M-Pesa</h4>
-            <p style="font-weight: bold; font-size: 1.2em;">124563</p>
+            <p style="font-weight: bold; font-size: 1.2em;">58769044</p>
           </div>
           <div>
             <h4>EcoCash</h4>
-            <p style="font-weight: bold; font-size: 1.2em;">7152445</p>
+            <p style="font-weight: bold; font-size: 1.2em;">63947686</p>
           </div>
           <div>
-            <h4>Bank</h4>
-            <p style="font-weight: bold; font-size: 1.2em;">58827</p>
+            <h5>Molefi</h5>
+            <p style="font-weight: bold; font-size: 1.2em;">Khoele</p>
           </div>
         </div>
         <p style="color: var(--urgency-red); margin-top: 1rem; font-weight: bold;">
@@ -210,8 +210,7 @@
         <select name="faculty" required>
           <option value="">Select Your Path to Success</option>
           <option>BSc Nursing</option>
-          <option>BSc Computer Science</option>
-          <option>BSc General</option>
+          <option>Faculty of science Technology(General,CS,etc)</option>
           <option>BSc Environmental Health</option>
           <option>BSc Agriculture</option>
           <option>BSc Nutrition</option>
@@ -220,7 +219,7 @@
           <option>Faculty of Law</option>
           <option>Faculty of Social Sciences</option>
           <option>Faculty of Humanities</option>
-          <option>Faculty of Education</option>
+          <option>Faculty of Education(not yet available)</option>
         </select>
       </div>
 
@@ -256,12 +255,12 @@
     const valid18 = /^[A-Za-z0-9]{8}\.[A-Za-z0-9]{4}\.[A-Za-z0-9]{5}$/.test(transaction);
 
     if (!valid12 && !valid18) {
-      alert("❌ Invalid transaction ID. Must be either 12 characters long or 18 characters in this format: XXXXXXXX.XXXX.XXXXX");
+      alert("❌ Invalid transaction ID. check the Message you recieved aftyer paying, copy and paste the transaction ID (Mpesa, approval code(Ecocash)");
       transactionInput.focus();
       e.preventDefault();
     }
   });
 </script>
-
+<footer>&copy topfour academy 2025</footer>
 </body>
 </html>
