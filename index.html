@@ -153,7 +153,7 @@
 
   <div class="container">
     <div class="urgency-section">
-      Get first year study package for programs studied at NUL for just M49.99!<br>
+      Get first year study package for  most programs studied at NUL for just M49.99!<br>
       <span id="countdown"> 51:02:59:47</span>
     </div>
 
@@ -218,7 +218,7 @@
           <option>BSc Education</option>
           <option>Faculty of Law</option>
           <option>Faculty of Social Sciences</option>
-          <option>Faculty of Humanities</option>
+          <option>Faculty of Humanities(not available yet)</option>
           <option>Faculty of Education(not yet available)</option>
         </select>
       </div>
@@ -252,7 +252,7 @@
     // - 12 alphanumeric characters (e.g. "ABC123DEF456")
     // - OR 18 characters with dots at positions 9 and 14 (e.g. "ABC12345A.1B2C.3D4E")
     const valid12 = /^[A-Za-z0-9]{12}$/.test(transaction);
-    const valid18 = /^[A-Za-z0-9]{8}\.[A-Za-z0-9]{4}\.[A-Za-z0-9]{5}$/.test(transaction);
+    const valid18 = /^[A-Za-z0-9]{8}\.[A-Za-z0-9]{4}\.[A-Za-z0-9]{6}$/.test(transaction);
 
     if (!valid12 && !valid18) {
       alert("❌ Invalid transaction ID. check the Message you recieved aftyer paying, copy and paste the transaction ID (Mpesa, approval code(Ecocash)");
