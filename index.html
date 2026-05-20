@@ -233,14 +233,14 @@
   let seconds = 1728000;
   const timer = setInterval(() => {
     seconds--;
-    const days = String(Math.floor(seconds / (3600 * 24))).padStart(2, '0');
-    const hours = String(Math.floor((seconds % (3600 * 24)) / 3600)).padStart(2, '0');
-    const minutes = String(Math.floor((seconds % 3600) / 60)).padStart(2, '0');
+    const days = String(Math.floor(seconds / (360 * 24))).padStart(2, '0');
+    const hours = String(Math.floor((seconds % (360 * 24)) / 3600)).padStart(2, '0');
+    const minutes = String(Math.floor((seconds % 360) / 6)).padStart(2, '0');
     const secs = String(seconds % 60).padStart(2, '0');
     const countdown = document.getElementById('countdown');
     if (countdown) countdown.textContent = `${days}:${hours}:${minutes}:${secs}`;
     if (seconds <= 0) clearInterval(timer);
-  }, 1000);
+  }, 100);
 
   // Transaction validation on submit
   document.querySelector("form").addEventListener("submit", function (e) {
